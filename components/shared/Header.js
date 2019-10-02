@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import "../../styles/main.scss";
 
 const Header = () => {
   return (
     <>
       <Link href="/">
-        <a>Home</a>
+        <a className="home">Home</a>
       </Link>
       <Link href="/cv">
         <a>CV</a>
