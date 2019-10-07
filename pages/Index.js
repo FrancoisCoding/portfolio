@@ -7,7 +7,9 @@ class Index extends React.Component {
   render() {
     return (
       <BaseLayout>
-        <Button color="danger">Danger!</Button>
+        <div className="container">
+          <Button color="danger">Danger!</Button>
+        </div>
       </BaseLayout>
     );
   }
