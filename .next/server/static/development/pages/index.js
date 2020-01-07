@@ -378,6 +378,17 @@ const Example = props => {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/map.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/map.js ***!
@@ -2664,16 +2675,25 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! auth0-js */ "auth0-js");
-/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! auth0-js */ "auth0-js");
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! js-cookie */ "js-cookie");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
 
 
 
 class Auth0 {
   constructor() {
-    this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_1___default.a.WebAuth({
+    this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_2___default.a.WebAuth({
       domain: 'dev-muyfhpy4.auth0.com',
       clientID: '1gbOuVc9mDL2rfsmbsDFGOPbWH0eB2oT',
       redirectUri: 'http://localhost:3000/callback',
@@ -2681,12 +2701,13 @@ class Auth0 {
       scope: 'openid profile'
     });
     this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
+    this.isAuthenticated = this.isAuthenticated.bind(this);
   }
 
   handleAuthentication() {
-    debugger;
-    return new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a((resolve, reject) => {
+    return new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_1___default.a((resolve, reject) => {
       this.auth0.parseHash((err, authResult) => {
         if (authResult && authResult.accessToken && authResult.idToken) {
           this.setSession(authResult);
@@ -2699,11 +2720,35 @@ class Auth0 {
     });
   }
 
-  setSession() {// Save tokens !!!!!!!!!!
+  setSession(authResult) {
+    debugger; // Set the time that the Access Token will expire at
+
+    const expiresAt = _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(authResult.expiresIn * 1000 + new Date().getTime());
+
+    js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.set('user', authResult.idTokenPayload);
+    js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.set('jwt', authResult.idToken);
+    js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.set('expiresAt', expiresAt);
+  }
+
+  logout() {
+    // Clear Access Token and ID Token from local storage
+    js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.remove('user');
+    js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.remove('jwt');
+    js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.remove('expiresAt');
+    this.auth0.logout({
+      returnTo: '',
+      clientID: '1gbOuVc9mDL2rfsmbsDFGOPbWH0eB2oT'
+    });
   }
 
   login() {
     this.auth0.authorize();
+  }
+
+  isAuthenticated() {
+    // Check whether the current time is past the Access Token's expiry time
+    const expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.getJSON('expiresAt');
+    return new Date().getTime < expiresAt;
   }
 
 }
@@ -2733,6 +2778,17 @@ module.exports = __webpack_require__(/*! F:\WEBSITES\16_portfolio\pages\index.js
 /***/ (function(module, exports) {
 
 module.exports = require("auth0-js");
+
+/***/ }),
+
+/***/ "core-js/library/fn/json/stringify":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/json/stringify" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/json/stringify");
 
 /***/ }),
 
@@ -2843,6 +2899,28 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "js-cookie":
+/*!****************************!*\
+  !*** external "js-cookie" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("js-cookie");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
