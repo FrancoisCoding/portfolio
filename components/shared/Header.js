@@ -1,7 +1,7 @@
 const BsNavLink = ({ route, title }) => {
     return (
         <Link href={route}>
-            <a className='nav-link'> {title} </a>
+            <a className='nav-link port-navbar-link'> {title} </a>
         </Link>
     );
 };
@@ -26,28 +26,34 @@ const Example = props => {
 
     return (
         <div>
-            <Navbar color='light' light expand='md'>
-                <NavbarBrand href='/'>Isaiah Francois</NavbarBrand>
+            <Navbar
+                className='port-navbar port-default absolute'
+                color='transparent'
+                dark
+                expand='md'
+            >
+                <NavbarBrand className='port-navbar-brand' href='/'>
+                    Isaiah Francois
+                </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className='mr-auto' navbar>
-                        <NavItem>
+                    <Nav className='ml-auto' navbar>
+                        <NavItem className='port-navbar-item'>
                             <BsNavLink route='/' title='Home' />
                         </NavItem>
-                        <NavItem>
+                        <NavItem className='port-navbar-item'>
                             <BsNavLink route='/cv' title='CV' />
                         </NavItem>
-                        <NavItem>
+                        <NavItem className='port-navbar-item'>
                             <BsNavLink route='/portfolios' title='Portfolio' />
                         </NavItem>
-                        <NavItem>
+                        <NavItem className='port-navbar-item'>
                             <BsNavLink route='/about' title='About' />
                         </NavItem>
-                        <NavItem>
+                        <NavItem className='port-navbar-item'>
                             <BsNavLink route='/blogs' title='Blog' />
                         </NavItem>
                     </Nav>
-                    <NavbarText>FrancoisCoding</NavbarText>
                 </Collapse>
             </Navbar>
         </div>

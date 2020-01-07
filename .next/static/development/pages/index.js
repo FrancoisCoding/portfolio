@@ -82,7 +82,7 @@ var BsNavLink = function BsNavLink(_ref) {
     },
     __self: this
   }, __jsx("a", {
-    className: "nav-link",
+    className: "nav-link port-navbar-link",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
@@ -111,8 +111,9 @@ var Example = function Example(props) {
     },
     __self: this
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
-    color: "light",
-    light: true,
+    className: "port-navbar port-default absolute",
+    color: "transparent",
+    dark: true,
     expand: "md",
     __source: {
       fileName: _jsxFileName,
@@ -120,17 +121,18 @@ var Example = function Example(props) {
     },
     __self: this
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarBrand"], {
+    className: "port-navbar-brand",
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 35
     },
     __self: this
   }, "Isaiah Francois"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarToggler"], {
     onClick: toggle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 38
     },
     __self: this
   }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Collapse"], {
@@ -138,21 +140,22 @@ var Example = function Example(props) {
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 39
     },
     __self: this
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
-    className: "mr-auto",
+    className: "ml-auto",
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 40
     },
     __self: this
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 41
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -160,13 +163,14 @@ var Example = function Example(props) {
     title: "Home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 42
     },
     __self: this
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 44
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -174,13 +178,14 @@ var Example = function Example(props) {
     title: "CV",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 45
     },
     __self: this
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 47
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -188,13 +193,14 @@ var Example = function Example(props) {
     title: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 48
     },
     __self: this
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 50
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -202,13 +208,14 @@ var Example = function Example(props) {
     title: "About",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 51
     },
     __self: this
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 53
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -216,16 +223,10 @@ var Example = function Example(props) {
     title: "Blog",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 54
     },
     __self: this
-  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarText"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
-  }, "FrancoisCoding"))));
+  }))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Example);
@@ -24824,6 +24825,7 @@ function (_React$Component) {
         loop: true,
         typeSpeed: 60,
         backSpeed: 60,
+        shuffle: true,
         strings: this.roles,
         smartBackspace: true,
         backDelay: 1000,
@@ -24840,13 +24842,13 @@ function (_React$Component) {
         className: "hero-welcome-bio",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 78
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 79
         },
         __self: this
       }, "Let's take a look on my work.")))))));

@@ -65,6 +65,7 @@ class Index extends React.Component {
                                     loop
                                     typeSpeed={60}
                                     backSpeed={60}
+                                    shuffle
                                     strings={this.roles}
                                     smartBackspace
                                     backDelay={1000}
