@@ -221,13 +221,35 @@ const BsNavLink = ({
     },
     __self: undefined
   }, __jsx("a", {
-    className: "nav-link port-navbar-link",
+    className: "nav-link port-navbar-link clickable",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
     },
     __self: undefined
   }, " ", title, " "));
+};
+
+const Login = () => {
+  return __jsx("span", {
+    className: "nav-link port-navbar-link clickable",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, " Login ");
+};
+
+const Logout = () => {
+  return __jsx("span", {
+    className: "nav-link port-navbar-link clickable",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, " Logout ");
 };
 
 
@@ -245,7 +267,7 @@ const Example = props => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
@@ -255,7 +277,7 @@ const Example = props => {
     expand: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 39
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarBrand"], {
@@ -263,14 +285,14 @@ const Example = props => {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 45
     },
     __self: undefined
   }, "Isaiah Francois"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarToggler"], {
     onClick: toggle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 48
     },
     __self: undefined
   }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Collapse"], {
@@ -278,7 +300,7 @@ const Example = props => {
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
@@ -286,14 +308,14 @@ const Example = props => {
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -301,14 +323,14 @@ const Example = props => {
     title: "Home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 52
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -316,14 +338,14 @@ const Example = props => {
     title: "CV",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 55
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 57
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -331,14 +353,14 @@ const Example = props => {
     title: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 58
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 60
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -346,14 +368,14 @@ const Example = props => {
     title: "About",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 61
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 63
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -361,7 +383,33 @@ const Example = props => {
     title: "Blog",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 64
+    },
+    __self: undefined
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }, __jsx(Login, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: undefined
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: undefined
+  }, __jsx(Logout, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
     },
     __self: undefined
   }))))));
