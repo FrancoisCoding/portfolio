@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2404,10 +2404,10 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/portfolios.js":
+/*!*****************************!*\
+  !*** ./pages/portfolios.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2415,202 +2415,43 @@ if (false) {} else {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-typed */ "react-typed");
-/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_typed__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "F:\\WEBSITES\\16_portfolio\\pages\\index.js";
+/* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
+var _jsxFileName = "F:\\WEBSITES\\16_portfolio\\pages\\portfolios.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-
-class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor(props) {
-    super(props);
-    this.roles = ['Responsive Web Designer', 'SEO Optimization', 'Team Player', 'React.js', 'Teen Programmer', 'Node.js', 'Freelancer', 'Front End Developer', 'Detail Oriented'];
-  }
-
+class Portfolios extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   render() {
-    return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      className: "cover",
+    return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "main-section",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "background-image",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    }, __jsx("img", {
-      src: "/static/images/background-index.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      },
-      __self: this
-    })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30
-      },
-      __self: this
-    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      md: "6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "hero-section",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32
-      },
-      __self: this
-    }, __jsx("div", {
-      className: `flipper`,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 33
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "back",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "hero-section-content",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
-    }, __jsx("h2", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }, "Full Stack Web Developer"), __jsx("div", {
-      className: "hero-section-content-intro",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: this
-    }, "Have a look at my portfolio and job history.")), __jsx("img", {
-      className: "image",
-      src: "/static/images/section-1.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
-    }), __jsx("div", {
-      className: "shadow-custom",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "shadow-inner",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
-    })))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      md: "6",
-      className: "hero-welcome-wrapper",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 55
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "hero-welcome-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 7
       },
       __self: this
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 8
       },
       __self: this
-    }, "Welcome to the portfolio website of Isaiah Francois. Get informed, collaborate and discover projects I was working on through the years!")), __jsx(react_typed__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      loop: true,
-      typeSpeed: 60,
-      backSpeed: 60,
-      strings: this.roles,
-      smartBackspace: true,
-      backDelay: 1000,
-      loopCount: 0,
-      showCursor: true,
-      className: "self-typed",
-      cursorChar: "|",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      },
-      __self: this
-    }), __jsx("div", {
-      className: "hero-welcome-bio",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: this
-    }, __jsx("h1", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: this
-    }, "Let's take a look on my work.")))))));
+    }, "I am Portfolios Page"));
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+/* harmony default export */ __webpack_exports__["default"] = (Portfolios);
 
 /***/ }),
 
-/***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/***/ 5:
+/*!***********************************!*\
+  !*** multi ./pages/portfolios.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\WEBSITES\16_portfolio\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! F:\WEBSITES\16_portfolio\pages\portfolios.js */"./pages/portfolios.js");
 
 
 /***/ }),
@@ -2758,17 +2599,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-typed":
-/*!******************************!*\
-  !*** external "react-typed" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-typed");
-
-/***/ }),
-
 /***/ "reactstrap":
 /*!*****************************!*\
   !*** external "reactstrap" ***!
@@ -2792,4 +2622,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=portfolios.js.map
