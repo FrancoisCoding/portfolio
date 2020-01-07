@@ -25013,9 +25013,27 @@ function () {
       scope: 'openid profile'
     });
     this.login = this.login.bind(this);
+    this.handleAuthentication = this.handleAuthentication.bind(this);
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Auth0, [{
+    key: "handleAuthentication",
+    value: function handleAuthentication() {
+      var _this = this;
+
+      this.auth0.parseHash(function (err, authResult) {
+        if (authResult && authResult.accessToken && authResult.idToken) {
+          _this.setSession(authResult);
+        } else if (err) {
+          console.log(err);
+        }
+      });
+    }
+  }, {
+    key: "setSession",
+    value: function setSession() {// Save tokens !!!!!!!!!!
+    }
+  }, {
     key: "login",
     value: function login() {
       this.auth0.authorize();
