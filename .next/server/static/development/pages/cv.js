@@ -206,8 +206,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _services_auth0__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/auth0 */ "./services/auth0.js");
 var _jsxFileName = "F:\\WEBSITES\\16_portfolio\\components\\shared\\Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
 
 const BsNavLink = ({
   route,
@@ -217,14 +222,14 @@ const BsNavLink = ({
     href: route,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 17
     },
     __self: undefined
   }, __jsx("a", {
     className: "nav-link port-navbar-link clickable",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 18
     },
     __self: undefined
   }, " ", title, " "));
@@ -232,13 +237,14 @@ const BsNavLink = ({
 
 const Login = () => {
   return __jsx("span", {
+    onClick: _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].login,
     className: "nav-link port-navbar-link clickable",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 25
     },
     __self: undefined
-  }, " Login ");
+  }, ' ', "Login", ' ');
 };
 
 const Logout = () => {
@@ -246,15 +252,11 @@ const Logout = () => {
     className: "nav-link port-navbar-link clickable",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 37
     },
     __self: undefined
   }, " Logout ");
 };
-
-
-
-
 
 const Example = props => {
   const {
@@ -267,7 +269,7 @@ const Example = props => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 47
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
@@ -277,7 +279,7 @@ const Example = props => {
     expand: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 48
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarBrand"], {
@@ -285,14 +287,14 @@ const Example = props => {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 54
     },
     __self: undefined
   }, "Isaiah Francois"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarToggler"], {
     onClick: toggle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 57
     },
     __self: undefined
   }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Collapse"], {
@@ -300,7 +302,7 @@ const Example = props => {
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 58
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
@@ -308,55 +310,10 @@ const Example = props => {
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    className: "port-navbar-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
-  }, __jsx(BsNavLink, {
-    route: "/",
-    title: "Home",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: undefined
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    className: "port-navbar-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: undefined
-  }, __jsx(BsNavLink, {
-    route: "/cv",
-    title: "CV",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: undefined
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    className: "port-navbar-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: undefined
-  }, __jsx(BsNavLink, {
-    route: "/portfolios",
-    title: "Portfolio",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
@@ -364,8 +321,8 @@ const Example = props => {
     },
     __self: undefined
   }, __jsx(BsNavLink, {
-    route: "/about",
-    title: "About",
+    route: "/",
+    title: "Home",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 61
@@ -379,8 +336,8 @@ const Example = props => {
     },
     __self: undefined
   }, __jsx(BsNavLink, {
-    route: "/blogs",
-    title: "Blog",
+    route: "/cv",
+    title: "CV",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 64
@@ -393,7 +350,9 @@ const Example = props => {
       lineNumber: 66
     },
     __self: undefined
-  }, __jsx(Login, {
+  }, __jsx(BsNavLink, {
+    route: "/portfolios",
+    title: "Portfolio",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 67
@@ -406,10 +365,53 @@ const Example = props => {
       lineNumber: 69
     },
     __self: undefined
-  }, __jsx(Logout, {
+  }, __jsx(BsNavLink, {
+    route: "/about",
+    title: "About",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 70
+    },
+    __self: undefined
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
+  }, __jsx(BsNavLink, {
+    route: "/blogs",
+    title: "Blog",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  }, __jsx(Login, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: undefined
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    className: "port-navbar-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: undefined
+  }, __jsx(Logout, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
     },
     __self: undefined
   }))))));
@@ -2544,6 +2546,42 @@ class Cv extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
+/***/ "./services/auth0.js":
+/*!***************************!*\
+  !*** ./services/auth0.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! auth0-js */ "auth0-js");
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_0__);
+
+
+class Auth0 {
+  constructor() {
+    this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_0___default.a.WebAuth({
+      domain: 'dev-muyfhpy4.auth0.com',
+      clientID: '1gbOuVc9mDL2rfsmbsDFGOPbWH0eB2oT',
+      redirectUri: 'http://localhost:3000/callback',
+      responseType: 'token id_token',
+      scope: 'openid profile'
+    });
+    this.login = this.login.bind(this);
+  }
+
+  login() {
+    this.auth0.authorize();
+  }
+
+}
+
+const auth0Client = new Auth0();
+/* harmony default export */ __webpack_exports__["default"] = (auth0Client);
+
+/***/ }),
+
 /***/ 4:
 /*!***************************!*\
   !*** multi ./pages/cv.js ***!
@@ -2553,6 +2591,17 @@ class Cv extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 module.exports = __webpack_require__(/*! F:\WEBSITES\16_portfolio\pages\cv.js */"./pages/cv.js");
 
+
+/***/ }),
+
+/***/ "auth0-js":
+/*!***************************!*\
+  !*** external "auth0-js" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("auth0-js");
 
 /***/ }),
 

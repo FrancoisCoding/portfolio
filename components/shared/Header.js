@@ -1,21 +1,3 @@
-const BsNavLink = ({ route, title }) => {
-    return (
-        <Link href={route}>
-            <a className='nav-link port-navbar-link clickable'> {title} </a>
-        </Link>
-    );
-};
-
-const Login = () => {
-    return <span className='nav-link port-navbar-link clickable'> Login </span>;
-};
-
-const Logout = () => {
-    return (
-        <span className='nav-link port-navbar-link clickable'> Logout </span>
-    );
-};
-
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
@@ -28,6 +10,33 @@ import {
     NavLink,
     NavbarText
 } from 'reactstrap';
+import auth0 from '../../services/auth0';
+
+const BsNavLink = ({ route, title }) => {
+    return (
+        <Link href={route}>
+            <a className='nav-link port-navbar-link clickable'> {title} </a>
+        </Link>
+    );
+};
+
+const Login = () => {
+    return (
+        <span
+            onClick={auth0.login}
+            className='nav-link port-navbar-link clickable'
+        >
+            {' '}
+            Login{' '}
+        </span>
+    );
+};
+
+const Logout = () => {
+    return (
+        <span className='nav-link port-navbar-link clickable'> Logout </span>
+    );
+};
 
 const Example = props => {
     const [isOpen, setIsOpen] = useState(false);
