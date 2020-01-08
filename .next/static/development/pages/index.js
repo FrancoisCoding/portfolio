@@ -105,21 +105,22 @@ var Login = function Login() {
       lineNumber: 25
     },
     __self: this
-  }, ' ', "Login", ' ');
+  }, "Login");
 };
 
 var Logout = function Logout() {
   return __jsx("span", {
+    onClick: _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].logout,
     className: "nav-link port-navbar-link clickable",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 36
     },
     __self: this
-  }, " Logout ");
+  }, "Logout");
 };
 
-var Example = function Example(props) {
+var Header = function Header(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       isOpen = _useState[0],
       setIsOpen = _useState[1];
@@ -128,10 +129,11 @@ var Example = function Example(props) {
     return setIsOpen(!isOpen);
   };
 
+  console.log('Authenticated', _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated());
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 52
     },
     __self: this
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
@@ -141,7 +143,7 @@ var Example = function Example(props) {
     expand: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 53
     },
     __self: this
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarBrand"], {
@@ -149,14 +151,14 @@ var Example = function Example(props) {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 59
     },
     __self: this
   }, "Isaiah Francois"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarToggler"], {
     onClick: toggle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 62
     },
     __self: this
   }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Collapse"], {
@@ -164,7 +166,7 @@ var Example = function Example(props) {
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 63
     },
     __self: this
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
@@ -172,14 +174,14 @@ var Example = function Example(props) {
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 64
     },
     __self: this
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 65
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -187,14 +189,14 @@ var Example = function Example(props) {
     title: "Home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 66
     },
     __self: this
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 68
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -202,14 +204,14 @@ var Example = function Example(props) {
     title: "CV",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 69
     },
     __self: this
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 71
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -217,14 +219,14 @@ var Example = function Example(props) {
     title: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 72
     },
     __self: this
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 74
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -232,14 +234,14 @@ var Example = function Example(props) {
     title: "About",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 75
     },
     __self: this
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 77
     },
     __self: this
   }, __jsx(BsNavLink, {
@@ -247,39 +249,39 @@ var Example = function Example(props) {
     title: "Blog",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 78
     },
     __self: this
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+  })), !_services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 81
     },
     __self: this
   }, __jsx(Login, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 82
     },
     __self: this
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+  })), _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 86
     },
     __self: this
   }, __jsx(Logout, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 87
     },
     __self: this
   }))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Example);
+/* harmony default export */ __webpack_exports__["default"] = (Header);
 
 /***/ }),
 
@@ -25407,9 +25409,11 @@ function () {
   }, {
     key: "setSession",
     value: function setSession(authResult) {
-      debugger; // Set the time that the Access Token will expire at
+      // debugger;
+      // Set the time that the Access Token will expire at
+      var conversion = authResult.expiresIn * 1000;
 
-      var expiresAt = _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(authResult.expiresIn * 1000 + new Date().getTime());
+      var expiresAt = _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(conversion + new Date().getTime());
 
       js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.set('user', authResult.idTokenPayload);
       js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.set('jwt', authResult.idToken);
@@ -25437,7 +25441,9 @@ function () {
     value: function isAuthenticated() {
       // Check whether the current time is past the Access Token's expiry time
       var expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.getJSON('expiresAt');
-      return new Date().getTime < expiresAt;
+      var currentTime = new Date();
+      console.log(currentTime.getTime());
+      return currentTime.getTime() < expiresAt;
     }
   }]);
 

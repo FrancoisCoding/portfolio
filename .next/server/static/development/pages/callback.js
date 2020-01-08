@@ -244,21 +244,22 @@ const Login = () => {
       lineNumber: 25
     },
     __self: undefined
-  }, ' ', "Login", ' ');
+  }, "Login");
 };
 
 const Logout = () => {
   return __jsx("span", {
+    onClick: _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].logout,
     className: "nav-link port-navbar-link clickable",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 36
     },
     __self: undefined
-  }, " Logout ");
+  }, "Logout");
 };
 
-const Example = props => {
+const Header = props => {
   const {
     0: isOpen,
     1: setIsOpen
@@ -266,10 +267,11 @@ const Example = props => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  console.log('Authenticated', _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated());
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
@@ -279,7 +281,7 @@ const Example = props => {
     expand: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarBrand"], {
@@ -287,14 +289,14 @@ const Example = props => {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 59
     },
     __self: undefined
   }, "Isaiah Francois"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarToggler"], {
     onClick: toggle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 62
     },
     __self: undefined
   }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Collapse"], {
@@ -302,7 +304,7 @@ const Example = props => {
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 63
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
@@ -310,14 +312,14 @@ const Example = props => {
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 64
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 65
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -325,14 +327,14 @@ const Example = props => {
     title: "Home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 66
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 68
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -340,14 +342,14 @@ const Example = props => {
     title: "CV",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 69
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 71
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -355,14 +357,14 @@ const Example = props => {
     title: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 72
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 74
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -370,14 +372,14 @@ const Example = props => {
     title: "About",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 75
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 77
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -385,39 +387,39 @@ const Example = props => {
     title: "Blog",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 78
     },
     __self: undefined
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+  })), !_services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 81
     },
     __self: undefined
   }, __jsx(Login, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 82
     },
     __self: undefined
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+  })), _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 86
     },
     __self: undefined
   }, __jsx(Logout, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 87
     },
     __self: undefined
   }))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Example);
+/* harmony default export */ __webpack_exports__["default"] = (Header);
 
 /***/ }),
 
@@ -2619,9 +2621,11 @@ class Auth0 {
   }
 
   setSession(authResult) {
-    debugger; // Set the time that the Access Token will expire at
+    // debugger;
+    // Set the time that the Access Token will expire at
+    const conversion = authResult.expiresIn * 1000;
 
-    const expiresAt = _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(authResult.expiresIn * 1000 + new Date().getTime());
+    const expiresAt = _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(conversion + new Date().getTime());
 
     js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.set('user', authResult.idTokenPayload);
     js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.set('jwt', authResult.idToken);
@@ -2646,7 +2650,9 @@ class Auth0 {
   isAuthenticated() {
     // Check whether the current time is past the Access Token's expiry time
     const expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.getJSON('expiresAt');
-    return new Date().getTime < expiresAt;
+    const currentTime = new Date();
+    console.log(currentTime.getTime());
+    return currentTime.getTime() < expiresAt;
   }
 
 }
