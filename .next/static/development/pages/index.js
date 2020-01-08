@@ -25442,8 +25442,29 @@ function () {
       // Check whether the current time is past the Access Token's expiry time
       var expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.getJSON('expiresAt');
       var currentTime = new Date();
-      console.log(currentTime.getTime());
       return currentTime.getTime() < expiresAt;
+    }
+  }, {
+    key: "clientAuth",
+    value: function clientAuth() {
+      return this.isAuthenticated();
+    }
+  }, {
+    key: "serverAuth",
+    value: function serverAuth(req) {
+      if (req.headers.cookie) {
+        var expiresAtCookie = req.headers.cookie.split(';').find(function (c) {
+          return c.trim().startsWith('expiresAt=');
+        });
+
+        if (!expiresAtCookie) {
+          return undefined;
+        }
+
+        var expiresAt = expiresAtCookie.split('=')[1];
+        var currentTime = new Date();
+        return currentTime.getTime() < expiresAt;
+      }
     }
   }]);
 
@@ -25455,7 +25476,7 @@ var auth0Client = new Auth0();
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!******************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=F%3A%5CWEBSITES%5C16_portfolio%5Cpages%5Cindex.js ***!
   \******************************************************************************************************************/
@@ -25478,5 +25499,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2753,8 +2753,25 @@ class Auth0 {
     // Check whether the current time is past the Access Token's expiry time
     const expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.getJSON('expiresAt');
     const currentTime = new Date();
-    console.log(currentTime.getTime());
     return currentTime.getTime() < expiresAt;
+  }
+
+  clientAuth() {
+    return this.isAuthenticated();
+  }
+
+  serverAuth(req) {
+    if (req.headers.cookie) {
+      const expiresAtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('expiresAt='));
+
+      if (!expiresAtCookie) {
+        return undefined;
+      }
+
+      const expiresAt = expiresAtCookie.split('=')[1];
+      const currentTime = new Date();
+      return currentTime.getTime() < expiresAt;
+    }
   }
 
 }
@@ -2764,7 +2781,7 @@ const auth0Client = new Auth0();
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
