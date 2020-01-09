@@ -55926,17 +55926,26 @@ function () {
           switch (_context2.prev = _context2.next) {
             case 0:
               if (!token) {
-                _context2.next = 23;
+                _context2.next = 25;
                 break;
               }
 
               decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_8___default.a.decode(token, {
                 complete: true
               });
-              _context2.next = 4;
-              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(this.getJWKS());
+
+              if (decodedToken) {
+                _context2.next = 4;
+                break;
+              }
+
+              return _context2.abrupt("return", undefined);
 
             case 4:
+              _context2.next = 6;
+              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(this.getJWKS());
+
+            case 6:
               jwks = _context2.sent;
               jwk = jwks.keys[0]; // BUILD CERTIFICATE
 
@@ -55945,35 +55954,35 @@ function () {
               cert = "-----BEGIN CERTIFICATE-----\n".concat(cert, "\n-----END CERTIFICATE-----\n"); //
 
               if (!(jwk.kid === decodedToken.header.kid)) {
-                _context2.next = 20;
+                _context2.next = 22;
                 break;
               }
 
-              _context2.prev = 10;
+              _context2.prev = 12;
               verifiedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_8___default.a.verify(token, cert);
               _expiresAt = verifiedToken.exp * 1000;
               _currentTime = new Date();
               return _context2.abrupt("return", verifiedToken && _currentTime.getTime() < _expiresAt ? decodedToken : undefined);
 
-            case 17:
-              _context2.prev = 17;
-              _context2.t0 = _context2["catch"](10);
+            case 19:
+              _context2.prev = 19;
+              _context2.t0 = _context2["catch"](12);
               return _context2.abrupt("return", undefined);
 
-            case 20:
+            case 22:
               expiresAt = decodedToken.exp * 1000;
               currentTime = new Date();
               return _context2.abrupt("return", decodedToken && currentTime.getTime() < expiresAt ? decodedToken : undefined);
 
-            case 23:
+            case 25:
               return _context2.abrupt("return", undefined);
 
-            case 24:
+            case 26:
             case "end":
               return _context2.stop();
           }
         }
-      }, null, this, [[10, 17]]);
+      }, null, this, [[12, 19]]);
     }
   }, {
     key: "clientAuth",

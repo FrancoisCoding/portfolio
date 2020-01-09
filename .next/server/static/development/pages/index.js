@@ -2822,6 +2822,11 @@ class Auth0 {
       const decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default.a.decode(token, {
         complete: true
       });
+
+      if (!decodedToken) {
+        return undefined;
+      }
+
       const jwks = await this.getJWKS();
       const jwk = jwks.keys[0]; // BUILD CERTIFICATE
 
