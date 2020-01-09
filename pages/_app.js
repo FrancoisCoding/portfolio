@@ -9,14 +9,14 @@ import auth0 from '../services/auth0';
 export default class MyApp extends App {
     static async getInitialProps({ Component, router, ctx }) {
         let pageProps = {};
-        const isAuthenticated = process.browser
+        const user = process.browser
             ? auth0.clientAuth()
             : auth0.serverAuth(ctx.req);
 
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx);
         }
-        const auth = { isAuthenticated };
+        const auth = { user, isAuthenticated: !!user };
         return { pageProps, auth };
     }
 

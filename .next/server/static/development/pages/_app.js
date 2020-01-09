@@ -2135,14 +2135,15 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
     ctx
   }) {
     let pageProps = {};
-    const isAuthenticated = false ? undefined : _services_auth0__WEBPACK_IMPORTED_MODULE_5__["default"].serverAuth(ctx.req);
+    const user = false ? undefined : _services_auth0__WEBPACK_IMPORTED_MODULE_5__["default"].serverAuth(ctx.req);
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
 
     const auth = {
-      isAuthenticated
+      user,
+      isAuthenticated: !!user
     };
     return {
       pageProps,
@@ -2195,6 +2196,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! js-cookie */ "js-cookie");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jsonwebtoken */ "jsonwebtoken");
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -2264,22 +2268,38 @@ class Auth0 {
     return currentTime.getTime() < expiresAt;
   }
 
+  verifyToken(token) {
+    if (token) {
+      const decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default.a.decode(token);
+      const expiresAt = decodedToken.exp * 1000;
+      const currentTime = new Date();
+      return decodedToken && currentTime.getTime() < expiresAt ? decodedToken : undefined;
+    }
+
+    return undefined;
+  }
+
   clientAuth() {
-    return this.isAuthenticated();
+    const token = js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.getJSON('jwt');
+    const verifiedToken = this.verifyToken(token);
+    return verifiedToken;
   }
 
   serverAuth(req) {
     if (req.headers.cookie) {
-      const expiresAtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('expiresAt='));
+      const tokenCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt='));
 
-      if (!expiresAtCookie) {
+      if (!tokenCookie) {
         return undefined;
       }
 
-      const expiresAt = expiresAtCookie.split('=')[1];
+      const token = tokenCookie.split('=')[1];
+      const verifiedToken = this.verifyToken(token);
       const currentTime = new Date();
-      return currentTime.getTime() < expiresAt;
+      return verifiedToken;
     }
+
+    return undefined;
   }
 
 }
@@ -2441,6 +2461,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("js-cookie");
+
+/***/ }),
+
+/***/ "jsonwebtoken":
+/*!*******************************!*\
+  !*** external "jsonwebtoken" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("jsonwebtoken");
 
 /***/ }),
 
