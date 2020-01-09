@@ -58,7 +58,7 @@ class Index extends React.Component {
                                     <h1>
                                         {isAuthenticated && (
                                             <span>
-                                                <b> {user.name} </b>
+                                                <b> {user.payload.name} </b>
                                             </span>
                                         )}
                                         Welcome to the portfolio website of

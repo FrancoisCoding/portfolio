@@ -2686,7 +2686,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         lineNumber: 61
       },
       __self: this
-    }, " ", user.name, " ")), "Welcome to the portfolio website of Isaiah Francois. Get informed, collaborate and discover projects I was working on through the years!")), __jsx(react_typed__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    }, " ", user.payload.name, " ")), "Welcome to the portfolio website of Isaiah Francois. Get informed, collaborate and discover projects I was working on through the years!")), __jsx(react_typed__WEBPACK_IMPORTED_MODULE_2___default.a, {
       loop: true,
       typeSpeed: 60,
       backSpeed: 60,
@@ -2746,6 +2746,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jsonwebtoken */ "jsonwebtoken");
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
@@ -2808,9 +2811,35 @@ class Auth0 {
     this.auth0.authorize();
   }
 
-  verifyToken(token) {
+  async getJWKS() {
+    const res = await axios__WEBPACK_IMPORTED_MODULE_6___default.a.get('https://dev-muyfhpy4.auth0.com/.well-known/jwks.json');
+    const jwks = res.data;
+    return jwks;
+  }
+
+  async verifyToken(token) {
     if (token) {
-      const decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default.a.decode(token);
+      const decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default.a.decode(token, {
+        complete: true
+      });
+      const jwks = await this.getJWKS();
+      const jwk = jwks.keys[0]; // BUILD CERTIFICATE
+
+      let cert = jwk.x5c[0];
+      cert = cert.match(/.{1,64}/g).join('\n');
+      cert = `-----BEGIN CERTIFICATE-----\n${cert}\n-----END CERTIFICATE-----\n`; //
+
+      if (jwk.kid === decodedToken.header.kid) {
+        try {
+          const verifiedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default.a.verify(token, cert);
+          const expiresAt = verifiedToken.exp * 1000;
+          const currentTime = new Date();
+          return verifiedToken && currentTime.getTime() < expiresAt ? decodedToken : undefined;
+        } catch (err) {
+          return undefined;
+        }
+      }
+
       const expiresAt = decodedToken.exp * 1000;
       const currentTime = new Date();
       return decodedToken && currentTime.getTime() < expiresAt ? decodedToken : undefined;
@@ -2819,13 +2848,13 @@ class Auth0 {
     return undefined;
   }
 
-  clientAuth() {
+  async clientAuth() {
     const token = js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.getJSON('jwt');
     const verifiedToken = this.verifyToken(token);
     return verifiedToken;
   }
 
-  serverAuth(req) {
+  async serverAuth(req) {
     if (req.headers.cookie) {
       const tokenCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt='));
 
@@ -2834,7 +2863,7 @@ class Auth0 {
       }
 
       const token = tokenCookie.split('=')[1];
-      const verifiedToken = this.verifyToken(token);
+      const verifiedToken = await this.verifyToken(token);
       const currentTime = new Date();
       return verifiedToken;
     }
@@ -2869,6 +2898,17 @@ module.exports = __webpack_require__(/*! F:\WEBSITES\16_portfolio\pages\index.js
 /***/ (function(module, exports) {
 
 module.exports = require("auth0-js");
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
