@@ -112,7 +112,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const BaseLayout = ({
   children,
-  className
+  className,
+  isAuthenticated
 }) => {
   return __jsx("div", {
     className: "layout-container",
@@ -122,6 +123,7 @@ const BaseLayout = ({
     },
     __self: undefined
   }, __jsx(_shared_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    isAuthenticated: isAuthenticated,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
@@ -216,7 +218,9 @@ const Logout = () => {
   }, "Logout");
 };
 
-const Header = props => {
+const Header = ({
+  isAuthenticated
+}) => {
   const {
     0: isOpen,
     1: setIsOpen
@@ -347,7 +351,7 @@ const Header = props => {
       lineNumber: 78
     },
     __self: undefined
-  })), !_services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+  })), !isAuthenticated && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
@@ -360,7 +364,7 @@ const Header = props => {
       lineNumber: 82
     },
     __self: undefined
-  })), _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+  })), isAuthenticated && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
@@ -498,6 +502,39 @@ module.exports = __webpack_require__(/*! core-js/library/fn/symbol/iterator */ "
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/weak-map */ "core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+
+function _extends() {
+  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
 
 /***/ }),
 
@@ -2477,35 +2514,38 @@ if (false) {} else {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-typed */ "react-typed");
-/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_typed__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-typed */ "react-typed");
+/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_typed__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_4__);
+
 var _jsxFileName = "F:\\WEBSITES\\16_portfolio\\pages\\index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
 
 
-class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
     super(props);
     this.roles = ['Responsive Web Designer', 'SEO Optimization', 'Team Player', 'React.js', 'Teen Programmer', 'Node.js', 'Freelancer', 'Front End Developer', 'Detail Oriented'];
   }
 
   render() {
-    return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      className: "cover",
+    return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_3__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      className: "cover"
+    }, this.props.auth, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 23
       },
       __self: this
-    }, __jsx("div", {
+    }), __jsx("div", {
       className: "main-section",
       __source: {
         fileName: _jsxFileName,
@@ -2526,19 +2566,19 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 26
       },
       __self: this
-    })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+    })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Container"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 29
       },
       __self: this
-    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 30
       },
       __self: this
-    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
       md: "6",
       __source: {
         fileName: _jsxFileName,
@@ -2608,7 +2648,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 49
       },
       __self: this
-    })))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    })))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
       md: "6",
       className: "hero-welcome-wrapper",
       __source: {
@@ -2629,7 +2669,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 57
       },
       __self: this
-    }, "Welcome to the portfolio website of Isaiah Francois. Get informed, collaborate and discover projects I was working on through the years!")), __jsx(react_typed__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    }, "Welcome to the portfolio website of Isaiah Francois. Get informed, collaborate and discover projects I was working on through the years!")), __jsx(react_typed__WEBPACK_IMPORTED_MODULE_2___default.a, {
       loop: true,
       typeSpeed: 60,
       backSpeed: 60,

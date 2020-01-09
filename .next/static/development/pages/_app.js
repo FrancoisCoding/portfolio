@@ -7852,17 +7852,19 @@ function (_App) {
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
-          pageProps = _this$props.pageProps;
+          pageProps = _this$props.pageProps,
+          auth = _this$props.auth;
       return __jsx(next_app__WEBPACK_IMPORTED_MODULE_8__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 26
         },
         __self: this
       }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, pageProps, {
+        auth: auth,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 27
         },
         __self: this
       })));
@@ -7870,7 +7872,7 @@ function (_App) {
   }], [{
     key: "getInitialProps",
     value: function getInitialProps(_ref) {
-      var Component, router, ctx, pageProps, isAuthenticated;
+      var Component, router, ctx, pageProps, isAuthenticated, auth;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getInitialProps$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -7878,22 +7880,25 @@ function (_App) {
               Component = _ref.Component, router = _ref.router, ctx = _ref.ctx;
               pageProps = {};
               isAuthenticated = true ? _services_auth0__WEBPACK_IMPORTED_MODULE_11__["default"].clientAuth() : undefined;
-              console.log(_services_auth0__WEBPACK_IMPORTED_MODULE_11__["default"].isAuthenticated());
 
               if (!Component.getInitialProps) {
-                _context.next = 8;
+                _context.next = 7;
                 break;
               }
 
-              _context.next = 7;
+              _context.next = 6;
               return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Component.getInitialProps(ctx));
 
-            case 7:
+            case 6:
               pageProps = _context.sent;
 
-            case 8:
+            case 7:
+              auth = {
+                isAuthenticated: isAuthenticated
+              };
               return _context.abrupt("return", {
-                pageProps: pageProps
+                pageProps: pageProps,
+                auth: auth
               });
 
             case 9:

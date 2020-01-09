@@ -2136,32 +2136,37 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
   }) {
     let pageProps = {};
     const isAuthenticated = false ? undefined : _services_auth0__WEBPACK_IMPORTED_MODULE_5__["default"].serverAuth(ctx.req);
-    console.log(_services_auth0__WEBPACK_IMPORTED_MODULE_5__["default"].isAuthenticated());
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
 
+    const auth = {
+      isAuthenticated
+    };
     return {
-      pageProps
+      pageProps,
+      auth
     };
   }
 
   render() {
     const {
       Component,
-      pageProps
+      pageProps,
+      auth
     } = this.props;
     return __jsx(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 26
       },
       __self: this
     }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+      auth: auth,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 27
       },
       __self: this
     })));
