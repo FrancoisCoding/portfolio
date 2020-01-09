@@ -93,6 +93,49 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/BasePage.js":
+/*!********************************!*\
+  !*** ./components/BasePage.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _shared_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/Header */ "./components/shared/Header.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "F:\\WEBSITES\\16_portfolio\\components\\BasePage.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const BasePage = ({
+  children
+}) => {
+  return __jsx("div", {
+    className: "base-page",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, children));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (BasePage);
+
+/***/ }),
+
 /***/ "./components/hoc/withAuth.js":
 /*!************************************!*\
   !*** ./components/hoc/withAuth.js ***!
@@ -102,33 +145,87 @@ module.exports =
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
+/* harmony import */ var _BasePage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../BasePage */ "./components/BasePage.js");
+
+
+
+
+
+
+
 
 var _jsxFileName = "F:\\WEBSITES\\16_portfolio\\components\\hoc\\withAuth.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
+
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = (function (Component) {
-  return class withAuth extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-    alertMessage() {
-      alert('SOME MESSAGE!!!!!!!!!');
+  return class withAuth extends react__WEBPACK_IMPORTED_MODULE_8___default.a.Component {
+    static async getInitialProps(args) {
+      const pageProps = (await Component.getInitialProps) && (await Component.getInitialProps(args));
+      return _objectSpread({}, pageProps);
+    }
+
+    renderProtectedPage() {
+      const {
+        isAuthenticated
+      } = this.props.auth;
+
+      if (isAuthenticated) {
+        return __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_6__["default"])({}, this.props, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18
+          },
+          __self: this
+        }));
+      } else {
+        return __jsx(_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_9__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_6__["default"])({}, this.props.auth, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21
+          },
+          __self: this
+        }), __jsx(_BasePage__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          },
+          __self: this
+        }, __jsx("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          },
+          __self: this
+        }, "You are not authenticated. Please Login to access this page")));
+      }
     }
 
     render() {
-      const someVariable1 = '1';
-      const someVariable2 = '2';
-      return __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-        alertMessage: this.alertMessage,
-        someVariable1: someVariable1,
-        someVariable2: someVariable2
-      }, this.props, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        },
-        __self: this
-      }));
+      return this.renderProtectedPage();
     }
 
   };
@@ -192,49 +289,6 @@ const BaseLayout = ({
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (BaseLayout);
-
-/***/ }),
-
-/***/ "./components/layouts/BasePage.js":
-/*!****************************************!*\
-  !*** ./components/layouts/BasePage.js ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _shared_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/Header */ "./components/shared/Header.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "F:\\WEBSITES\\16_portfolio\\components\\layouts\\BasePage.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-const BasePage = ({
-  children
-}) => {
-  return __jsx("div", {
-    className: "base-page",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: undefined
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: undefined
-  }, children));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (BasePage);
 
 /***/ }),
 
@@ -515,6 +569,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/create */ "co
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/define-properties */ "core-js/library/fn/object/define-properties");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
@@ -534,6 +599,28 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptors */ "core-js/library/fn/object/get-own-property-descriptors");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "core-js/library/fn/object/get-own-property-symbols");
 
 /***/ }),
 
@@ -589,6 +676,36 @@ module.exports = __webpack_require__(/*! core-js/library/fn/symbol/iterator */ "
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/weak-map */ "core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
 
 /***/ }),
 
@@ -2605,7 +2722,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
-/* harmony import */ var _components_layouts_BasePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/layouts/BasePage */ "./components/layouts/BasePage.js");
+/* harmony import */ var _components_BasePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/BasePage */ "./components/BasePage.js");
 /* harmony import */ var _components_hoc_withAuth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/hoc/withAuth */ "./components/hoc/withAuth.js");
 
 var _jsxFileName = "F:\\WEBSITES\\16_portfolio\\pages\\secret.js";
@@ -2616,63 +2733,53 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 class Secret extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  // renderSecretPage() {
-  //     const { isAuthenticated } = this.props.auth;
-  //     if (isAuthenticated) {
-  //         return (
-  //             <BaseLayout {...this.props.auth}>
-  //                 <BasePage>
-  //                     <h1>I am Secret Page</h1>
-  //                     <p>Secret Content gere</p>
-  //                 </BasePage>
-  //             </BaseLayout>
-  //         );
-  //     } else {
-  //         return (
-  //             <BaseLayout {...this.props.auth}>
-  //                 <BasePage>
-  //                     <h1>
-  //                         You are not authenticated. Please Login to access
-  //                         this page
-  //                     </h1>
-  //                 </BasePage>
-  //             </BaseLayout>
-  //         );
-  //     }
-  // }
+  static getInitialProps() {
+    const superSecretValue = 'Super Secret Value';
+    return {
+      superSecretValue
+    };
+  }
+
   render() {
-    debugger;
-    console.log(this.props);
+    const {
+      superSecretValue
+    } = this.props;
     return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, this.props.auth, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 15
       },
       __self: this
-    }), __jsx(_components_layouts_BasePage__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), __jsx(_components_BasePage__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 16
       },
       __self: this
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 17
       },
       __self: this
     }, "I am Secret Page"), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 18
       },
       __self: this
-    }, "Secret Content Here")));
+    }, "Secret Content Here"), __jsx("h2", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, " ", superSecretValue, " ")));
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Secret);
+/* harmony default export */ __webpack_exports__["default"] = (Object(_components_hoc_withAuth__WEBPACK_IMPORTED_MODULE_4__["default"])(Secret));
 
 /***/ }),
 
@@ -2912,6 +3019,17 @@ module.exports = require("core-js/library/fn/object/create");
 
 /***/ }),
 
+/***/ "core-js/library/fn/object/define-properties":
+/*!**************************************************************!*\
+  !*** external "core-js/library/fn/object/define-properties" ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/define-properties");
+
+/***/ }),
+
 /***/ "core-js/library/fn/object/define-property":
 /*!************************************************************!*\
   !*** external "core-js/library/fn/object/define-property" ***!
@@ -2931,6 +3049,28 @@ module.exports = require("core-js/library/fn/object/define-property");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-descriptors":
+/*!*************************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-descriptors" ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-descriptors");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-symbols":
+/*!*********************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-symbols" ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-symbols");
 
 /***/ }),
 

@@ -1,22 +1,36 @@
 import React from 'react';
+import BaseLayout from '../layouts/BaseLayout';
+import BasePage from '../BasePage';
 
 export default function(Component) {
     return class withAuth extends React.Component {
-        alertMessage() {
-            alert('SOME MESSAGE!!!!!!!!!');
+        static async getInitialProps(args) {
+            const pageProps =
+                (await Component.getInitialProps) &&
+                (await Component.getInitialProps(args));
+
+            return { ...pageProps };
         }
 
+        renderProtectedPage() {
+            const { isAuthenticated } = this.props.auth;
+            if (isAuthenticated) {
+                return <Component {...this.props} />;
+            } else {
+                return (
+                    <BaseLayout {...this.props.auth}>
+                        <BasePage>
+                            <h1>
+                                You are not authenticated. Please Login to
+                                access this page
+                            </h1>
+                        </BasePage>
+                    </BaseLayout>
+                );
+            }
+        }
         render() {
-            const someVariable1 = '1';
-            const someVariable2 = '2';
-            return (
-                <Component
-                    alertMessage={this.alertMessage}
-                    someVariable1={someVariable1}
-                    someVariable2={someVariable2}
-                    {...this.props}
-                />
-            );
+            return this.renderProtectedPage();
         }
     };
 }
