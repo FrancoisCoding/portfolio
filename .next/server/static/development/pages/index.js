@@ -113,7 +113,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const BaseLayout = ({
   children,
   className,
-  isAuthenticated
+  isAuthenticated,
+  user
 }) => {
   return __jsx("div", {
     className: "layout-container",
@@ -124,6 +125,7 @@ const BaseLayout = ({
     __self: undefined
   }, __jsx(_shared_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isAuthenticated: isAuthenticated,
+    user: user,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
@@ -228,11 +230,10 @@ const Header = ({
 
   const toggle = () => setIsOpen(!isOpen);
 
-  console.log('Authenticated', _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated());
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
@@ -242,7 +243,7 @@ const Header = ({
     expand: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarBrand"], {
@@ -250,14 +251,14 @@ const Header = ({
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 58
     },
     __self: undefined
   }, "Isaiah Francois"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarToggler"], {
     onClick: toggle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 61
     },
     __self: undefined
   }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Collapse"], {
@@ -265,7 +266,7 @@ const Header = ({
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 62
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
@@ -273,14 +274,14 @@ const Header = ({
     navbar: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 63
     },
     __self: undefined
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 64
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -288,14 +289,14 @@ const Header = ({
     title: "Home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 65
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 67
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -303,14 +304,14 @@ const Header = ({
     title: "CV",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 68
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -318,14 +319,14 @@ const Header = ({
     title: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 71
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 73
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -333,14 +334,14 @@ const Header = ({
     title: "About",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 74
     },
     __self: undefined
   })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 76
     },
     __self: undefined
   }, __jsx(BsNavLink, {
@@ -348,33 +349,33 @@ const Header = ({
     title: "Blog",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 77
     },
     __self: undefined
   })), !isAuthenticated && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 80
     },
     __self: undefined
   }, __jsx(Login, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 81
     },
     __self: undefined
   })), isAuthenticated && __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
     className: "port-navbar-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 85
     },
     __self: undefined
   }, __jsx(Logout, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 86
     },
     __self: undefined
   }))))));
@@ -2537,93 +2538,97 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   }
 
   render() {
+    const {
+      isAuthenticated,
+      user
+    } = this.props.auth;
     return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_3__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
       className: "cover"
     }, this.props.auth, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 24
       },
       __self: this
     }), __jsx("div", {
       className: "main-section",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 25
       },
       __self: this
     }, __jsx("div", {
       className: "background-image",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 26
       },
       __self: this
     }, __jsx("img", {
       src: "/static/images/background-index.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 27
       },
       __self: this
     })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 30
       },
       __self: this
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 31
       },
       __self: this
     }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
       md: "6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 32
       },
       __self: this
     }, __jsx("div", {
       className: "hero-section",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 33
       },
       __self: this
     }, __jsx("div", {
       className: `flipper`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 34
       },
       __self: this
     }, __jsx("div", {
       className: "back",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 35
       },
       __self: this
     }, __jsx("div", {
       className: "hero-section-content",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 36
       },
       __self: this
     }, __jsx("h2", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 37
       },
       __self: this
     }, "Full Stack Web Developer"), __jsx("div", {
       className: "hero-section-content-intro",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 40
       },
       __self: this
     }, "Have a look at my portfolio and job history.")), __jsx("img", {
@@ -2631,21 +2636,21 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       src: "/static/images/section-1.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 45
       },
       __self: this
     }), __jsx("div", {
       className: "shadow-custom",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 49
       },
       __self: this
     }, __jsx("div", {
       className: "shadow-inner",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 50
       },
       __self: this
     })))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
@@ -2653,23 +2658,35 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       className: "hero-welcome-wrapper",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 56
       },
       __self: this
     }, __jsx("div", {
       className: "hero-welcome-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 57
       },
       __self: this
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 58
       },
       __self: this
-    }, "Welcome to the portfolio website of Isaiah Francois. Get informed, collaborate and discover projects I was working on through the years!")), __jsx(react_typed__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    }, isAuthenticated && __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    }, __jsx("b", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, " ", user.name, " ")), "Welcome to the portfolio website of Isaiah Francois. Get informed, collaborate and discover projects I was working on through the years!")), __jsx(react_typed__WEBPACK_IMPORTED_MODULE_2___default.a, {
       loop: true,
       typeSpeed: 60,
       backSpeed: 60,
@@ -2683,20 +2700,20 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       cursorChar: "|",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 70
       },
       __self: this
     }), __jsx("div", {
       className: "hero-welcome-bio",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 84
       },
       __self: this
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 85
       },
       __self: this
     }, "Let's take a look on my work.")))))));
@@ -2748,7 +2765,6 @@ class Auth0 {
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
-    this.isAuthenticated = this.isAuthenticated.bind(this);
   }
 
   handleAuthentication() {
@@ -2790,13 +2806,6 @@ class Auth0 {
 
   login() {
     this.auth0.authorize();
-  }
-
-  isAuthenticated() {
-    // Check whether the current time is past the Access Token's expiry time
-    const expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.getJSON('expiresAt');
-    const currentTime = new Date();
-    return currentTime.getTime() < expiresAt;
   }
 
   verifyToken(token) {

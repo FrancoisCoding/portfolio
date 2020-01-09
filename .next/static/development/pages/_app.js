@@ -36734,7 +36734,6 @@ function () {
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
-    this.isAuthenticated = this.isAuthenticated.bind(this);
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Auth0, [{
@@ -36784,14 +36783,6 @@ function () {
     key: "login",
     value: function login() {
       this.auth0.authorize();
-    }
-  }, {
-    key: "isAuthenticated",
-    value: function isAuthenticated() {
-      // Check whether the current time is past the Access Token's expiry time
-      var expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.getJSON('expiresAt');
-      var currentTime = new Date();
-      return currentTime.getTime() < expiresAt;
     }
   }, {
     key: "verifyToken",

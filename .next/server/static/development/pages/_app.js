@@ -2217,7 +2217,6 @@ class Auth0 {
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
-    this.isAuthenticated = this.isAuthenticated.bind(this);
   }
 
   handleAuthentication() {
@@ -2259,13 +2258,6 @@ class Auth0 {
 
   login() {
     this.auth0.authorize();
-  }
-
-  isAuthenticated() {
-    // Check whether the current time is past the Access Token's expiry time
-    const expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.getJSON('expiresAt');
-    const currentTime = new Date();
-    return currentTime.getTime() < expiresAt;
   }
 
   verifyToken(token) {

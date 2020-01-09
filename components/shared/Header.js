@@ -47,7 +47,6 @@ const Header = ({ isAuthenticated }) => {
 
     const toggle = () => setIsOpen(!isOpen);
 
-    console.log('Authenticated', auth0.isAuthenticated());
     return (
         <div>
             <Navbar
