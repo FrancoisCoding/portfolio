@@ -42945,7 +42945,7 @@ function (_App) {
                 pageProps = _context.sent;
 
               case 16:
-                isSiteOwner = user && user["https://filipjerga.herokuapp.com/role"] === 'siteOwner';
+                isSiteOwner = user && user["https://francoiscoding.herokuapp.com/role"] === 'siteOwner';
                 auth = {
                   user: user,
                   isAuthenticated: !!user,
