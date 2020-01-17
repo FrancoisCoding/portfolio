@@ -15,7 +15,11 @@ export default class MyApp extends App {
         let pageProps = {};
 
         if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx);
+            try {
+                pageProps = await Component.getInitialProps(ctx);
+            } catch (e) {
+                console.error(e);
+            }
         }
 
         const isSiteOwner =
