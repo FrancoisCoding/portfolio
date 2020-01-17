@@ -46,7 +46,7 @@ const BaseLayout = props => {
                         href={`${process.env.BASE_URL}${cannonical}`}
                     />
                 )}
-                <link rel='icon' type='image/ico' href='/static/favicon.png' />
+                <link rel='icon' type='image/ico' href='/static/favicon.ico' />
             </Head>
             <div className='layout-container'>
                 <Header
