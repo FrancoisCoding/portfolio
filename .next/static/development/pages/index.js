@@ -102,7 +102,7 @@ var BaseLayout = function BaseLayout(props) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
     rel: "icon",
     type: "image/ico",
-    href: "/static/favicon.png"
+    href: "/static/favicon.ico"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "layout-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shared_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
