@@ -1,4 +1,4 @@
 module.exports = {
     DB_URI: process.env.DB_URI,
-    NAMESPACE: 'localhost:3000'
+    NAMESPACE: 'https://francoiscoding.herokuapp.com'
 };
