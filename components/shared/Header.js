@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import ActiveLink from '../ActiveLink';
 import {
     Collapse,
@@ -7,15 +6,8 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
-    NavLink,
-    Dropdown,
-    DropdownItem,
-    DropdownToggle,
-    DropdownMenu
+    NavItem
 } from 'reactstrap';
-
-// import auth0 from '../../services/auth0';
 
 const BsNavLink = props => {
     const { route, title } = props;

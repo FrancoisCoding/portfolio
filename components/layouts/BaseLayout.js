@@ -3,13 +3,7 @@ import Header from '../shared/Header';
 import Head from 'next/head';
 
 const BaseLayout = props => {
-    const {
-        className,
-        children,
-
-        isSiteOwner,
-        cannonical
-    } = props;
+    const { className, children, cannonical } = props;
     const headerType = props.headerType || 'default';
     const title = props.title || 'Isaiah Francois Portfolio';
     return (
@@ -48,10 +42,7 @@ const BaseLayout = props => {
                 <link rel='icon' type='image/ico' href='/static/favicon.ico' />
             </Head>
             <div className='layout-container'>
-                <Header
-                    className={`port-nav-${headerType}`}
-                    isSiteOwner={isSiteOwner}
-                />
+                <Header className={`port-nav-${headerType}`} />
                 <main className={`cover ${className}`}>
                     <div className='wrapper'>{children}</div>
                 </main>

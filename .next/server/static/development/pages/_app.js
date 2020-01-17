@@ -194,8 +194,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
- // import auth0 from '../services/auth0';
-// Stylings
+ // Stylings
 
 
 
@@ -214,8 +213,7 @@ function (_App) {
 
   _createClass(MyApp, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      Object(_helpers_Fonts__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    value: function componentDidMount() {// Fonts();
     }
   }, {
     key: "render",
@@ -226,19 +224,19 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 30
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_toastify__WEBPACK_IMPORTED_MODULE_3__["ToastContainer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 31
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 32
         },
         __self: this
       })));
@@ -249,44 +247,36 @@ function (_App) {
       var _getInitialProps = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
-        var Component, router, ctx, pageProps;
+        var Component, ctx, pageProps;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                Component = _ref.Component, router = _ref.router, ctx = _ref.ctx;
+                Component = _ref.Component, ctx = _ref.ctx;
                 pageProps = {};
 
                 if (!Component.getInitialProps) {
-                  _context.next = 12;
+                  _context.next = 6;
                   break;
                 }
 
-                _context.prev = 3;
-                _context.next = 6;
+                _context.next = 5;
                 return Component.getInitialProps(ctx);
 
-              case 6:
+              case 5:
                 pageProps = _context.sent;
-                _context.next = 12;
-                break;
 
-              case 9:
-                _context.prev = 9;
-                _context.t0 = _context["catch"](3);
-                console.error(_context.t0);
-
-              case 12:
+              case 6:
                 return _context.abrupt("return", {
                   pageProps: pageProps
                 });
 
-              case 13:
+              case 7:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[3, 9]]);
+        }, _callee);
       }));
 
       function getInitialProps(_x) {

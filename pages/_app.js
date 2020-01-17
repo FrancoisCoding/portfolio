@@ -3,30 +3,24 @@ import App, { Container } from 'next/app';
 import { ToastContainer } from 'react-toastify';
 import Fonts from '../helpers/Fonts';
 
-// import auth0 from '../services/auth0';
-
 // Stylings
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/main.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default class MyApp extends App {
-    static async getInitialProps({ Component, router, ctx }) {
+    static async getInitialProps({ Component, ctx }) {
         let pageProps = {};
 
         if (Component.getInitialProps) {
-            try {
-                pageProps = await Component.getInitialProps(ctx);
-            } catch (e) {
-                console.error(e);
-            }
+            pageProps = await Component.getInitialProps(ctx);
         }
 
         return { pageProps };
     }
 
     componentDidMount() {
-        Fonts();
+        // Fonts();
     }
 
     render() {
