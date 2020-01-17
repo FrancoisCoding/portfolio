@@ -11,33 +11,32 @@ import '../styles/main.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default class MyApp extends App {
+    static async getInitialProps({ Component, router, ctx }) {
+        let pageProps = {};
 
-  static async getInitialProps({ Component, router, ctx }) {
-    let pageProps = {};
-    const user = process.browser ? await auth0.clientAuth() : await auth0.serverAuth(ctx.req);
+        if (Component.getInitialProps) {
+            pageProps = await Component.getInitialProps(ctx);
+        }
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
+        const isSiteOwner =
+            user && user[process.env.NAMESPACE + '/role'] === 'siteOwner';
+        const auth = { user, isAuthenticated: !!user, isSiteOwner };
+
+        return { pageProps, auth };
     }
 
-    const isSiteOwner = user && user[process.env.NAMESPACE + '/role'] === 'siteOwner';
-    const auth = { user, isAuthenticated: !!user, isSiteOwner };
+    componentDidMount() {
+        // Fonts();
+    }
 
-    return { pageProps, auth }
-  }
+    render() {
+        const { Component, pageProps, auth } = this.props;
 
-  componentDidMount() {
-    // Fonts();
-  }
-
-  render () {
-    const { Component, pageProps, auth } = this.props
-
-    return (
-      <Container>
-        <ToastContainer />
-        <Component {...pageProps} auth={auth}/>
-      </Container>
-    )
-  }
+        return (
+            <Container>
+                <ToastContainer />
+                <Component {...pageProps} auth={auth} />
+            </Container>
+        );
+    }
 }
