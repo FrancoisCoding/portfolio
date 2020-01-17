@@ -126,7 +126,7 @@ function (_React$Component) {
       }, "Profesional and top quality service in web development.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         alt: "Guy programming welcome picture",
         className: "image",
-        src: "/static/images/section-2.jpg"
+        src: "/static/images/section-2.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "shadow-custom shadow-custom-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -179,4 +179,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.7c5477f0db9fbb6a4069.hot-update.js.map
+//# sourceMappingURL=index.js.c2c375aeb4292c194a11.hot-update.js.map

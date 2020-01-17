@@ -1,9 +1,7 @@
 import React from 'react';
 import Typed from 'react-typed';
-
 import BaseLayout from '../components/layouts/BaseLayout';
-
-import { Button, Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 class Index extends React.Component {
     constructor(props) {
@@ -102,7 +100,7 @@ class Index extends React.Component {
                                             <img
                                                 alt='Guy programming welcome picture'
                                                 className='image'
-                                                src='/static/images/section-2.jpg'
+                                                src='/static/images/section-2.png'
                                             />
                                             <div className='shadow-custom shadow-custom-2'>
                                                 <div className='shadow-inner'>

@@ -126,7 +126,7 @@ function (_React$Component) {
       }, "Profesional and top quality service in web development.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         alt: "Guy programming welcome picture",
         className: "image",
-        src: "/static/images/section-2.jpg"
+        src: "/static/images/section-2.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "shadow-custom shadow-custom-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -136,7 +136,7 @@ function (_React$Component) {
         className: "hero-welcome-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hero-welcome-text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, " ", user.name, " "), ' '), "Welcome to the portfolio website of Isaiah Francois. Get informed, collaborate and discover projects I was worked on through the years!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_typed__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, " ", user.name, " "), ' '), "Welcome to the portfolio website of Isaiah Francois. Get informed, collaborate and discover projects I worked on through the years!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_typed__WEBPACK_IMPORTED_MODULE_1___default.a, {
         loop: true,
         typeSpeed: 60,
         backSpeed: 60,
@@ -179,4 +179,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.57a182e54eb0bdccdeca.hot-update.js.map
+//# sourceMappingURL=index.js.bfced9232df27756f373.hot-update.js.map

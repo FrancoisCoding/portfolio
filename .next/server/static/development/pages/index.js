@@ -170,10 +170,10 @@ var BaseLayout = function BaseLayout(props) {
     content: "My name is Isaiah Francois and I am an experienced software engineer and freelance developer. I have a Master's degree in Artificial Intelligence and several years of experience working on a wide range of technologies and projects from C++ development for ultrasound devices to modern mobile and web applications in React and Angular. Throughout my career, I have acquired advanced technical knowledge and the ability to explain programming topics clearly and in detail to a broad audience. I invite you to take my course, where I have put a lot of effort to explain web and software engineering concepts in a detailed, hands-on and understandable way."
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
     name: "keywords",
-    content: "jerga portfolio, jerga developer, jerga freelancig, jerga programming"
+    content: "francoiscoding portfolio, francoiscoding developer, francoiscodinga freelancing, francoiscoding programming"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
     property: "og:title",
-    content: "Isaiah Francois - programmer, developer, bloger"
+    content: "Isaiah Francois - programmer, developer, blogger"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
     property: "og:locale",
     content: "en_EU"
@@ -259,27 +259,13 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var BsNavLink = function BsNavLink(props) {
   var route = props.route,
       title = props.title;
-  var className = props.className || "";
+  var className = props.className || '';
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ActiveLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
     activeClassName: "active",
     route: route
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-link port-navbar-link ".concat(className)
-  }, " ", title, " "));
-};
-
-var Login = function Login() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    onClick: _services_auth0__WEBPACK_IMPORTED_MODULE_4__["default"].login,
-    className: "nav-link port-navbar-link clickable"
-  }, " Login ");
-};
-
-var Logout = function Logout() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    onClick: _services_auth0__WEBPACK_IMPORTED_MODULE_4__["default"].logout,
-    className: "nav-link port-navbar-link clickable"
-  }, " Logout ");
+  }, ' ', title, ' '));
 };
 
 var Header =
@@ -315,43 +301,6 @@ function (_React$Component) {
       this.setState({
         dropdownOpen: !this.state.dropdownOpen
       });
-    }
-  }, {
-    key: "renderBlogMenu",
-    value: function renderBlogMenu() {
-      var isSiteOwner = this.props.isSiteOwner;
-
-      if (isSiteOwner) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Dropdown"], {
-          className: "port-navbar-link port-dropdown-menu",
-          nav: true,
-          isOpen: this.state.dropdownOpen,
-          toggle: this.toggleDropdown
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownToggle"], {
-          className: "port-dropdown-toggle",
-          nav: true,
-          caret: true
-        }, "Blog"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BsNavLink, {
-          className: "port-dropdown-item",
-          route: "/blogs",
-          title: "Blogs"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BsNavLink, {
-          className: "port-dropdown-item",
-          route: "/blogs/new",
-          title: "Create a Blog"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BsNavLink, {
-          className: "port-dropdown-item",
-          route: "/blogs/dashboard",
-          title: "Blogs Dashboard"
-        }))));
-      }
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
-        className: "port-navbar-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BsNavLink, {
-        route: "/blogs",
-        title: "Blog"
-      }));
     }
   }, {
     key: "render",
@@ -391,18 +340,14 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
         className: "port-navbar-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BsNavLink, {
-        route: "/portfolios",
-        title: "Portfolio"
-      })), this.renderBlogMenu(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+        route: "/projects",
+        title: "Projects"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
         className: "port-navbar-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BsNavLink, {
         route: "/cv",
         title: "Cv"
-      })), !isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
-        className: "port-navbar-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null)), isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
-        className: "port-navbar-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logout, null))))));
+      }))))));
     }
   }]);
 
@@ -575,7 +520,7 @@ function (_React$Component) {
       }, "Profesional and top quality service in web development.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         alt: "Guy programming welcome picture",
         className: "image",
-        src: "/static/images/section-2.jpg"
+        src: "/static/images/section-2.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "shadow-custom shadow-custom-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

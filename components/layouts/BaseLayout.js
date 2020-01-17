@@ -23,11 +23,11 @@ const BaseLayout = props => {
                 />
                 <meta
                     name='keywords'
-                    content='jerga portfolio, jerga developer, jerga freelancig, jerga programming'
+                    content='francoiscoding portfolio, francoiscoding developer, francoiscodinga freelancing, francoiscoding programming'
                 />
                 <meta
                     property='og:title'
-                    content='Isaiah Francois - programmer, developer, bloger'
+                    content='Isaiah Francois - programmer, developer, blogger'
                 />
                 <meta property='og:locale' content='en_EU' />
                 <meta property='og:url' content={`${process.env.BASE_URL}`} />

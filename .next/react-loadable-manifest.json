@@ -7,21 +7,15 @@
       "publicPath": "static/chunks/0.js"
     }
   ],
-  "bootstrap/dist/css/bootstrap.min.css": [
+  "../styles/main.scss": [
     {
-      "id": "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-      "name": "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+      "id": "./styles/main.scss",
+      "name": "./styles/main.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
   ],
   "undefined": [
-    {
-      "id": 6,
-      "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    },
     {
       "id": 7,
       "name": null,
@@ -31,22 +25,6 @@
     {
       "id": 8,
       "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "../styles/main.scss": [
-    {
-      "id": "./styles/main.scss",
-      "name": "./styles/main.scss",
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "react-toastify/dist/ReactToastify.css": [
-    {
-      "id": "./node_modules/react-toastify/dist/ReactToastify.css",
-      "name": "./node_modules/react-toastify/dist/ReactToastify.css",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }

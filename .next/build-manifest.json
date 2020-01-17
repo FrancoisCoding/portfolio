@@ -6,18 +6,13 @@
     "/_app": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
+      "static/css/styles.chunk.css",
       "static/chunks/styles.js",
+      "static/css/static/development/pages/_app.js.chunk.css",
+      "static/css/static/development/pages/_app.js.chunk.css",
       "static/runtime/main.js"
     ],
     "/_error": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/cv": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/about": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
