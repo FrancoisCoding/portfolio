@@ -8,7 +8,7 @@ class Cv extends React.Component {
     render() {
         return (
             <BaseLayout>
-                <BasePage title='Preview of my CV' className='cv-page'>
+                <BasePage title='Preview of CV' className='cv-page'>
                     <Row>
                         <Col md={{ size: 8, offset: 2 }}>
                             <div className='cv-title'>
