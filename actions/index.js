@@ -18,17 +18,17 @@ const setAuthHeader = req => {
     return undefined;
 };
 
-const rejectPromise = resError => {
-    let error = {};
+// const rejectPromise = resError => {
+//     let error = {};
 
-    if (resError && resError.response && resError.response.data) {
-        error = resError.response.data;
-    } else {
-        error = resError;
-    }
+//     if (resError && resError.response && resError.response.data) {
+//         error = resError.response.data;
+//     } else {
+//         error = resError;
+//     }
 
-    return Promise.reject(error);
-};
+//     return Promise.reject(error);
+// };
 
 export const getSecretData = async req => {
     const url = '/secret';
@@ -57,7 +57,7 @@ export const createPortfolio = async portfolioData => {
     return await axiosInstance
         .post('/portfolios', portfolioData, setAuthHeader())
         .then(response => response.data)
-        .catch(error => rejectPromise(error));
+        .catch(error => console.error(e));
 };
 
 export const updatePortfolio = async portfolioData => {
@@ -68,7 +68,7 @@ export const updatePortfolio = async portfolioData => {
             setAuthHeader()
         )
         .then(response => response.data)
-        .catch(error => rejectPromise(error));
+        .catch(error => console.error(e));
 };
 
 export const deletePortfolio = portfolioId => {
@@ -105,14 +105,14 @@ export const createBlog = (blogData, lockId) => {
     return axiosInstance
         .post(`/blogs?lockId=${lockId}`, blogData, setAuthHeader())
         .then(response => response.data)
-        .catch(err => rejectPromise(err));
+        .catch(err => console.error(e));
 };
 
 export const updateBlog = (blogData, blogId) => {
     return axiosInstance
         .patch(`/blogs/${blogId}`, blogData, setAuthHeader())
         .then(response => response.data)
-        .catch(err => rejectPromise(err));
+        .catch(err => console.error(e));
 };
 
 export const getBlogById = blogId => {
@@ -126,5 +126,5 @@ export const deleteBlog = blogId => {
     return axiosInstance
         .delete(`/blogs/${blogId}`, setAuthHeader())
         .then(response => response.data)
-        .catch(err => rejectPromise(err));
+        .catch(err => console.error(e));
 };
