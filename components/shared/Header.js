@@ -57,7 +57,7 @@ export default class Header extends React.Component {
     }
 
     render() {
-        const { isAuthenticated, user, className } = this.props;
+        const { className } = this.props;
         const { isOpen } = this.state;
 
         const menuOpenClass = isOpen ? 'menu-open' : 'menu-close';
