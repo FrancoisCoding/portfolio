@@ -4,6 +4,7 @@ import BaseLayout from '../components/layouts/BaseLayout';
 import { Container, Row, Col } from 'reactstrap';
 
 class Index extends React.Component {
+    // Changed file name
     constructor(props) {
         super(props);
 
