@@ -3,7 +3,7 @@ import App, { Container } from 'next/app';
 import { ToastContainer } from 'react-toastify';
 import Fonts from '../helpers/Fonts';
 
-import auth0 from '../services/auth0';
+// import auth0 from '../services/auth0';
 
 // Stylings
 import 'bootstrap/dist/css/bootstrap.min.css';
