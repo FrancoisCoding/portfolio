@@ -22,7 +22,7 @@ export default class MyApp extends App {
             }
         }
 
-        return { pageProps, auth };
+        return { pageProps };
     }
 
     componentDidMount() {
@@ -30,12 +30,12 @@ export default class MyApp extends App {
     }
 
     render() {
-        const { Component, pageProps, auth } = this.props;
+        const { Component, pageProps } = this.props;
 
         return (
             <Container>
                 <ToastContainer />
-                <Component {...pageProps} auth={auth} />
+                <Component {...pageProps} />
             </Container>
         );
     }

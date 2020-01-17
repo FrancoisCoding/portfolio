@@ -31,7 +31,7 @@
 
 //             if (!isAuthenticated) {
 //                 return (
-//                     <BaseLayout {...this.props.auth}>
+//                     <BaseLayout >
 //                         <BasePage>
 //                             <h1>
 //                                 {' '}
@@ -43,7 +43,7 @@
 //                 );
 //             } else if (!isAuthorized) {
 //                 return (
-//                     <BaseLayout {...this.props.auth}>
+//                     <BaseLayout >
 //                         <BasePage>
 //                             <h1>
 //                                 {' '}

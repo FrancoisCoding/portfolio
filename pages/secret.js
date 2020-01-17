@@ -58,7 +58,7 @@ class Secret extends React.Component {
         const { superSecretValue } = this.props;
 
         return (
-            <BaseLayout {...this.props.auth}>
+            <BaseLayout>
                 <BasePage>
                     <h1> I am Secret Page </h1>
                     <p> Secret Content Here </p>

@@ -13,7 +13,7 @@ import {
 class Projects extends React.Component {
     render() {
         return (
-            <BaseLayout title='Isaiah Francois - Work' {...this.props.auth}>
+            <BaseLayout title='Isaiah Francois - Work'>
                 <BasePage className='projects-page'>
                     <div>
                         <Card>

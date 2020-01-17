@@ -46,7 +46,6 @@ class Index extends React.Component {
         return (
             <BaseLayout
                 className={`cover ${isFlipping ? 'cover-1' : 'cover-0'}`}
-                {...this.props.auth}
                 headerType='index'
                 title='Isaiah Francois - Portfolio'
             >

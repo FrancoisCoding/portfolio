@@ -104,7 +104,7 @@ class UserBlogs extends React.Component {
         const { published, drafts } = this.separateBlogs(blogs);
 
         return (
-            <BaseLayout {...this.props.auth} headerType={'landing'}>
+            <BaseLayout headerType={'landing'}>
                 <div
                     className='masthead'
                     style={{

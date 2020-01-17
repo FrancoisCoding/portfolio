@@ -54,7 +54,7 @@ class PortfolioEdit extends React.Component {
         const { portfolio } = this.props;
 
         return (
-            <BaseLayout {...this.props.auth}>
+            <BaseLayout>
                 <BasePage
                     className='portfolio-create-page'
                     title='Update Portfolio'

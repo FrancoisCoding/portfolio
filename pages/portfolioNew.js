@@ -52,7 +52,7 @@ class PortfolioNew extends React.Component {
         const { error } = this.state;
 
         return (
-            <BaseLayout {...this.props.auth}>
+            <BaseLayout>
                 <BasePage
                     className='portfolio-create-page'
                     title='Create New Portfolio'
