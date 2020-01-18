@@ -116,7 +116,7 @@ class Index extends React.Component {
                                         Welcome to the portfolio website of
                                         Isaiah Francois. Get informed,
                                         collaborate and discover projects I
-                                        worked on through the years!
+                                        worked on throughout the years!
                                     </h1>
                                 </div>
                                 <Typed
