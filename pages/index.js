@@ -1,7 +1,8 @@
 import React from 'react';
 import Typed from 'react-typed';
 import BaseLayout from '../components/layouts/BaseLayout';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col} from 'reactstrap';
+import { Link } from '../routes';
 
 class Index extends React.Component {
     // Changed file name
@@ -57,58 +58,60 @@ class Index extends React.Component {
                     <Container>
                         <Row>
                             <Col md='6'>
-                                <div className='hero-section'>
-                                    <div
-                                        className={`flipper ${
-                                            isFlipping ? 'isFlipping' : ''
-                                        }`}
-                                    >
-                                        <div className='front'>
-                                            <div className='hero-section-content'>
-                                                <h2>
-                                                    {' '}
-                                                    Full Stack Web Developer{' '}
-                                                </h2>
-                                                <div className='hero-section-content-intro'>
-                                                    Have a look at my portfolio
-                                                    and job history.
+                                <Link to='/projects'>
+                                    <div className='hero-section'>
+                                        <div
+                                            className={`flipper ${
+                                                isFlipping ? 'isFlipping' : ''
+                                            }`}
+                                        >
+                                            <div className='front'>
+                                                <div className='hero-section-content'>
+                                                    <h2>
+                                                        {' '}
+                                                        Full Stack Web Developer{' '}
+                                                    </h2>
+                                                    <div className='hero-section-content-intro'>
+                                                        Have a look at my portfolio
+                                                        and job history.
+                                                    </div>
+                                                </div>
+                                                <img
+                                                    alt='Guy programming welcome picture'
+                                                    className='image'
+                                                    src='/static/images/section-1.png'
+                                                />
+                                                <div className='shadow-custom'>
+                                                    <div className='shadow-inner'>
+                                                        {' '}
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <img
-                                                alt='Guy programming welcome picture'
-                                                className='image'
-                                                src='/static/images/section-1.png'
-                                            />
-                                            <div className='shadow-custom'>
-                                                <div className='shadow-inner'>
-                                                    {' '}
+                                            <div className='back'>
+                                                <div className='hero-section-content'>
+                                                    <h2>
+                                                        {' '}
+                                                        Get Your Projects Done{' '}
+                                                    </h2>
+                                                    <div className='hero-section-content-intro'>
+                                                        Profesional and top quality
+                                                        service in web development.
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div className='back'>
-                                            <div className='hero-section-content'>
-                                                <h2>
-                                                    {' '}
-                                                    Get Your Projects Done{' '}
-                                                </h2>
-                                                <div className='hero-section-content-intro'>
-                                                    Profesional and top quality
-                                                    service in web development.
-                                                </div>
-                                            </div>
-                                            <img
-                                                alt='Guy programming welcome picture'
-                                                className='image'
-                                                src='/static/images/section-2.png'
-                                            />
-                                            <div className='shadow-custom shadow-custom-2'>
-                                                <div className='shadow-inner'>
-                                                    {' '}
+                                                <img
+                                                    alt='Guy programming welcome picture'
+                                                    className='image'
+                                                    src='/static/images/section-2.png'
+                                                />
+                                                <div className='shadow-custom shadow-custom-2'>
+                                                    <div className='shadow-inner'>
+                                                        {' '}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             </Col>
                             <Col md='6' className='hero-welcome-wrapper'>
                                 <div className='hero-welcome-text'>
@@ -132,7 +135,9 @@ class Index extends React.Component {
                                 />
 
                                 <div className='hero-welcome-bio'>
-                                    <h2>Let's take a look on my work.</h2>
+                                    <Link to='/projects'>
+                                        <h2 className='work'>Let's take a look at my work.</h2>
+                                    </Link>
                                 </div>
                             </Col>
                         </Row>
