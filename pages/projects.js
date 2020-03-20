@@ -19,7 +19,7 @@ class Projects extends React.Component {
                         <Card>
                             <CardImg
                                 top
-                                width='90%'
+                                width='60%'
                                 src='/static/images/coachme.png'
                                 alt='CoachMe Thumbnail'
                             />

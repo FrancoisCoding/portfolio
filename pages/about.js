@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/BasePage';
-
+import { Link } from '../routes';
 import { Row, Col } from 'reactstrap';
 
 class About extends React.Component {
@@ -12,9 +12,9 @@ class About extends React.Component {
                     <Row className='mt-5'>
                         <Col md='6'>
                             <div className='left-side'>
-                                <h1 className='title fadein'>Hello, Welcome</h1>
+                                <h1 className='title fadein'>Hello, welcome </h1>
                                 <h4 className='subtitle fadein'>
-                                    To About Page
+                                To my corner of the internet!
                                 </h4>
                                 <p className='subsubTitle fadein'>
                                     Feel free to read short description about
@@ -30,8 +30,8 @@ class About extends React.Component {
                                     developer.
                                 </p>
                                 <p>
-                                    I have developed a vast amount of
-                                    applications with different techologies
+                                    I have developed a <Link to='/projects'>vast amount of
+                                    applications </Link> with different techologies
                                     individually and with numerous teams.
                                 </p>
                                 <p>
