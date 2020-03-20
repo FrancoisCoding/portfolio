@@ -39,7 +39,7 @@ class Index extends React.Component {
             this.setState({
                 isFlipping: !this.state.isFlipping
             });
-        }, 60000);
+        }, 10000);
     }
 
     render() {
@@ -59,7 +59,7 @@ class Index extends React.Component {
                         <Row>
                             <Col md='6'>
                                 <Link to='/projects'>
-                                    <div className='hero-section'>
+                                    <div className='hero-section work'>
                                         <div
                                             className={`flipper ${
                                                 isFlipping ? 'isFlipping' : ''
@@ -136,7 +136,7 @@ class Index extends React.Component {
 
                                 <div className='hero-welcome-bio'>
                                     <Link to='/projects'>
-                                        <h2 className='work'>Let's take a look at my work.</h2>
+                                        <h2 className='work strong'>Let's take a look at my work.</h2>
                                     </Link>
                                 </div>
                             </Col>

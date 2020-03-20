@@ -149,8 +149,18 @@
     z-index: 9999;
 }
 
+.front:hover {
+    border: 2px solid white;
+    transition: ease-in-out 0.3s;
+}
+
 .back {
     transform: rotateY(180deg);
+}
+
+.back:hover {
+    border: 2px solid white;
+    transition: ease-in-out 0.3s;
 }
 
 .service-link {
@@ -168,5 +178,12 @@
 .work {
     cursor: pointer;
     text-decoration: none !important;
-    color: white !important;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.work:hover {
+    text-decoration: underline !important;
 }
