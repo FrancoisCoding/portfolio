@@ -20,7 +20,7 @@ class Projects extends React.Component {
                             <CardImg
                                 top
                                 width='60%'
-                                src='/static/images/coachme.png'
+                                src='/static/images/coachme-min.png'
                                 alt='CoachMe Thumbnail'
                             />
                             <CardBody>
@@ -60,7 +60,7 @@ class Projects extends React.Component {
                             <CardImg
                                 top
                                 width='90%'
-                                src='/static/images/gamecenter.png'
+                                src='/static/images/gamecenter-min.png'
                                 alt='Francois Games Thumbnail'
                             />
                             <CardBody>
@@ -95,7 +95,7 @@ class Projects extends React.Component {
                             <CardImg
                                 top
                                 width='90%'
-                                src='/static/images/reactmovie.png'
+                                src='/static/images/reactmovie-min.png'
                                 alt='React Movies Thumbnail'
                             />
                             <CardBody>
