@@ -55,6 +55,39 @@ class Projects extends React.Component {
               <CardImg
                 top
                 width="60%"
+                src="/static/images/AI.jpg"
+                alt="AI Thumbnail"
+              />
+              <CardBody>
+                <CardTitle className="bold-font">AI Application</CardTitle>
+                <CardText>
+                  Full stack AI application featuring AI intelligence that can
+                  conversate, provide latest news updates, and even do some
+                  amazing calculations.
+                </CardText>
+                <Button
+                  color="primary"
+                  href="https://ai-app.netlify.app/"
+                  target="_blank"
+                >
+                  View Project
+                </Button>{" "}
+                <Button
+                  color="secondary"
+                  href="https://github.com/FrancoisCoding/AI-News-App"
+                  target="_blank"
+                >
+                  Code
+                </Button>{" "}
+                <CardText>
+                  <small className="text-muted">ReactJS | Alan</small>
+                </CardText>
+              </CardBody>
+            </Card>
+            <Card>
+              <CardImg
+                top
+                width="60%"
                 src="/static/images/coachme-min.png"
                 alt="CoachMe Thumbnail"
               />
