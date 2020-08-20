@@ -88,6 +88,41 @@ class Projects extends React.Component {
               <CardImg
                 top
                 width="60%"
+                src="/static/images/BeachResort.jpg"
+                alt="Beach Resort Thumbnail"
+              />
+              <CardBody>
+                <CardTitle className="bold-font">Beach Resort</CardTitle>
+                <CardText>
+                  E-commerce application featuring a hotel where users can view
+                  featured rooms, filter through rooms, receive updated room
+                  information and book rooms through PayPal
+                </CardText>
+                <Button
+                  color="primary"
+                  href="https://francois-beach-resort.netlify.app/"
+                  target="_blank"
+                >
+                  View Project
+                </Button>{" "}
+                <Button
+                  color="secondary"
+                  href="https://github.com/FrancoisCoding/Hotel-Reservation"
+                  target="_blank"
+                >
+                  Code
+                </Button>{" "}
+                <CardText>
+                  <small className="text-muted">
+                    ReactJS | Contentful | Redux | PayPal
+                  </small>
+                </CardText>
+              </CardBody>
+            </Card>
+            <Card>
+              <CardImg
+                top
+                width="60%"
                 src="/static/images/coachme-min.png"
                 alt="CoachMe Thumbnail"
               />
