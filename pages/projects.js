@@ -88,7 +88,7 @@ class Projects extends React.Component {
               <CardImg
                 top
                 width="60%"
-                src="/static/images/BeachResort.jpg"
+                src="/static/images/BeachResort.png"
                 alt="Beach Resort Thumbnail"
               />
               <CardBody>
