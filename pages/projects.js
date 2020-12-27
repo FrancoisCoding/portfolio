@@ -1,4 +1,4 @@
-import React from "react";
+import React, {createRef} from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import BasePage from "../components/BasePage";
 import {
@@ -11,11 +11,35 @@ import {
 } from "reactstrap";
 
 class Projects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.personal = createRef();
+    this.upwork = createRef();
+  }
+
   render() {
     return (
       <BaseLayout title="Isaiah Francois - Work">
         <BasePage className="projects-page">
-          <div>
+          <div className="buttons">
+            <Button
+              color="secondary"
+              onClick={() => {
+                this.personal.current.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Personal Projects
+            </Button>
+            <Button
+              color="success"
+              onClick={() => {
+                this.upwork.current.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Upwork Projects
+            </Button>
+          </div>
+          <div ref={this.personal}>
             <Card>
               <CardImg
                 top
@@ -213,6 +237,29 @@ class Projects extends React.Component {
                 <CardText>
                   <small className="text-muted">ReactJS | Bootstrap</small>
                 </CardText>
+              </CardBody>
+            </Card>
+          </div>
+          <div ref={this.upwork}>
+            <Card>
+              <CardImg
+                top
+                width="60%"
+                src="/static/images/quadruple.png"
+                alt="Quadruple Thumbnail"
+              />
+              <CardBody>
+                <CardTitle className="bold-font">Quadruple J Capital</CardTitle>
+                <CardText>
+                The purpose of human life is to serve and to show compassion and the will to help others. At Quadruple J. Capital LLC, it is our mission to help and serve everyone we come into contact in the best way possible which will help achieve the goal of financial independence, a financial peace of mind and happiness.
+                </CardText>
+                <Button
+                  color="primary"
+                  href="https://www.quadruplejcapital.com/"
+                  target="_blank"
+                >
+                  View Project
+                </Button>{" "}
               </CardBody>
             </Card>
           </div>

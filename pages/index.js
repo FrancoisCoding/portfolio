@@ -18,10 +18,11 @@ class Index extends React.Component {
             'SEO Optimization',
             'Team Player',
             'React.js',
-            'Teen Programmer',
             'Node.js',
+            'PostgreSQL',
             'Freelancer',
             'Front End Developer',
+            'Back End Developer',
             'Detail Oriented'
         ];
     }
