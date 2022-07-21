@@ -31,15 +31,16 @@ class Projects extends React.Component {
               Personal Projects
             </Button>
             <Button
-              color="success"
+              color="primary"
               onClick={() => {
                 this.upwork.current.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Upwork Projects
+              Freelance Projects
             </Button>
           </div>
           <div ref={this.personal}>
+            <h1>Personal Projects</h1>
             <Card>
               <CardImg
                 top
@@ -177,6 +178,7 @@ class Projects extends React.Component {
             </Card>
           </div>
           <div ref={this.upwork}>
+            <h1>Freelance Projects</h1>
             <Card>
               <CardImg
                 top
