@@ -1,4 +1,4 @@
-import React, {createRef} from "react";
+import React, { createRef } from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import BasePage from "../components/BasePage";
 import {
@@ -25,7 +25,7 @@ class Projects extends React.Component {
             <Button
               color="secondary"
               onClick={() => {
-                this.personal.current.scrollIntoView({ behavior: 'smooth' });
+                this.personal.current.scrollIntoView({ behavior: "smooth" });
               }}
             >
               Personal Projects
@@ -33,7 +33,7 @@ class Projects extends React.Component {
             <Button
               color="success"
               onClick={() => {
-                this.upwork.current.scrollIntoView({ behavior: 'smooth' });
+                this.upwork.current.scrollIntoView({ behavior: "smooth" });
               }}
             >
               Upwork Projects
@@ -79,39 +79,6 @@ class Projects extends React.Component {
               <CardImg
                 top
                 width="60%"
-                src="/static/images/AI.jpg"
-                alt="AI Thumbnail"
-              />
-              <CardBody>
-                <CardTitle className="bold-font">AI Application</CardTitle>
-                <CardText>
-                  Full stack AI application featuring AI intelligence that can
-                  conversate, provide latest news updates, and even do some
-                  amazing calculations.
-                </CardText>
-                <Button
-                  color="primary"
-                  href="https://ai-app.netlify.app/"
-                  target="_blank"
-                >
-                  View Project
-                </Button>{" "}
-                <Button
-                  color="secondary"
-                  href="https://github.com/FrancoisCoding/AI-News-App"
-                  target="_blank"
-                >
-                  Code
-                </Button>{" "}
-                <CardText>
-                  <small className="text-muted">ReactJS | Alan</small>
-                </CardText>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardImg
-                top
-                width="60%"
                 src="/static/images/BeachResort.png"
                 alt="Beach Resort Thumbnail"
               />
@@ -146,65 +113,34 @@ class Projects extends React.Component {
             <Card>
               <CardImg
                 top
-                width="60%"
-                src="/static/images/coachme-min.png"
-                alt="CoachMe Thumbnail"
-              />
-              <CardBody>
-                <CardTitle className="bold-font">CoachMe Health</CardTitle>
-                <CardText>
-                  Patient first non-profit organization dedicated to improving
-                  the health of low-income Americans with diabetes and heart
-                  disease with health coaching for those who need it most.
-                </CardText>
-                <Button
-                  color="primary"
-                  href="https://app.coachmehealth.org/register"
-                  target="_blank"
-                >
-                  View Project
-                </Button>{" "}
-                <Button
-                  color="secondary"
-                  href="https://www.coachmehealth.org/"
-                  target="_blank"
-                >
-                  Official Page
-                </Button>{" "}
-                <CardText>
-                  <small className="text-muted">
-                    ReactJS | Redux | SASS | Twillio | Cron Jobs | ChartJS |
-                    Cypress
-                  </small>
-                </CardText>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardImg
-                top
                 width="90%"
-                src="/static/images/gamecenter-min.png"
-                alt="Francois Games Thumbnail"
+                src="/static/images/mediumimage.png"
+                alt="Medium Thumbnail"
               />
               <CardBody>
-                <CardTitle className="bold-font">Francois Games</CardTitle>
-                <CardText>Platform where game information is stored.</CardText>
+                <CardTitle className="bold-font">Medium Clone</CardTitle>
+                <CardText>
+                  A full-stack chat application utilizing Next.js, Sanity, and
+                  Tailwind
+                </CardText>
                 <Button
                   color="primary"
-                  href="https://francois-game-center.netlify.com/"
+                  href="https://medium-live-clone.netlify.app/"
                   target="_blank"
                 >
                   View Project
                 </Button>{" "}
                 <Button
                   color="secondary"
-                  href="https://github.com/FrancoisCoding/francois-games"
+                  href="https://github.com/FrancoisCoding/Medium-Clone"
                   target="_blank"
                 >
                   Code
-                </Button>{" "}
+                </Button>
                 <CardText>
-                  <small className="text-muted">ReactJS | Bootstrap</small>
+                  <small className="text-muted">
+                    NextJS | Sanity | TailwindCSS
+                  </small>
                 </CardText>
               </CardBody>
             </Card>
@@ -251,7 +187,12 @@ class Projects extends React.Component {
               <CardBody>
                 <CardTitle className="bold-font">Quadruple J Capital</CardTitle>
                 <CardText>
-                The purpose of human life is to serve and to show compassion and the will to help others. At Quadruple J. Capital LLC, it is our mission to help and serve everyone we come into contact in the best way possible which will help achieve the goal of financial independence, a financial peace of mind and happiness.
+                  The purpose of human life is to serve and to show compassion
+                  and the will to help others. At Quadruple J. Capital LLC, it
+                  is our mission to help and serve everyone we come into contact
+                  in the best way possible which will help achieve the goal of
+                  financial independence, a financial peace of mind and
+                  happiness.
                 </CardText>
                 <Button
                   color="primary"
