@@ -13,8 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
     "async-lock": "^1.1.3",
     "auth0-js": "^9.8.1",
     "axios": "^0.18.0",
@@ -22,6 +20,7 @@
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",
     "compression": "^1.7.3",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "emotion": "^9.2.12",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
@@ -32,7 +31,7 @@
     "jwks-rsa": "^1.3.0",
     "moment": "^2.22.2",
     "mongoose": "^5.8.7",
-    "next": "^7.0.2",
+    "next": "^12.3",
     "next-routes": "^1.4.2",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "react": "^16.6.0",
@@ -49,8 +48,5 @@
     "slate-react": "^0.21.12",
     "slugify": "^1.3.3"
   },
-  "devDependencies": {
-    "sass-loader": "^7.2.0",
-    "sass": "^1.53.0"
-  }
+  "devDependencies": {}
 }

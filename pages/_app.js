@@ -1,5 +1,5 @@
 import React from "react";
-import App, { Container } from "next/app";
+import App from "next/app";
 import { ToastContainer } from "react-toastify";
 import Fonts from "../helpers/Fonts";
 
@@ -27,10 +27,10 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <>
         <ToastContainer />
         <Component {...pageProps} />
-      </Container>
+      </>
     );
   }
 }

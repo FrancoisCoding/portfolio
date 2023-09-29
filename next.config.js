@@ -1,14 +1,18 @@
-const withSass = require('@zeit/next-sass');
-const withCSS = require('@zeit/next-css');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-module.exports = withCSS(withSass({
-  webpack(config, {dev}) {
-    if (config.mode === 'production') {
+module.exports = {
+  webpack(config, { dev }) {
+    if (!dev) {
+      config.optimization.minimize = true;
       if (Array.isArray(config.optimization.minimizer)) {
-        config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
+        config.optimization.minimizer.push(new CssMinimizerPlugin());
+      } else {
+        config.optimization.minimizer = [new CssMinimizerPlugin()];
       }
     }
+
+    // You may need to update the configuration further based on your project needs.
+
     return config;
-  }
-}));
+  },
+};
