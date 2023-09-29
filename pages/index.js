@@ -3,6 +3,7 @@ import Typed from "react-typed";
 import BaseLayout from "../components/layouts/BaseLayout";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "../routes";
+import Image from "next/image";
 
 class Index extends React.Component {
   // Changed file name
@@ -50,7 +51,10 @@ class Index extends React.Component {
       >
         <div className="main-section">
           <div className="background-image">
-            <img src="/static/images/background-index-min.png" />
+            <Image
+              src="/static/images/background-index-min.png"
+              layout="fill"
+            />
           </div>
           <Container>
             <Row>
